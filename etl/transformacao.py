@@ -5,12 +5,10 @@ def tratar_email(cliente):
         cliente["email"] = None
     return cliente
 
-
 def padronizar_estado(cliente):
     cliente = dict(cliente)
     cliente["estado"] = cliente["estado"].strip().upper()
     return cliente
-
 
 def converter_data(texto):
     texto = texto.strip()
@@ -19,12 +17,10 @@ def converter_data(texto):
         return f"{ano}-{mes}-{dia}"
     return texto
 
-
 def converter_valor(valor):
     if isinstance(valor, str):
         valor = valor.replace(",", ".")
     return round(float(valor), 2)
-
 
 def calcular_valor_itens(itens):
     total = 0
@@ -32,19 +28,16 @@ def calcular_valor_itens(itens):
         total += int(item["quantidade"]) * converter_valor(item["preco_unitario"])
     return round(total, 2)
 
-
 def marcar_divergencia(pedido):
     pedido = dict(pedido)
     diferenca = abs(pedido["valor_total"] - pedido["valor_itens"])
     pedido["divergente"] = round(diferenca, 2) > 0.01
     return pedido
 
-
 def tratar_cliente(cliente):
     cliente = tratar_email(cliente)
     cliente = padronizar_estado(cliente)
     return cliente
-
 
 def tratar_pedido(pedido):
     pedido = dict(pedido)
@@ -54,7 +47,6 @@ def tratar_pedido(pedido):
     pedido = marcar_divergencia(pedido)
     del pedido["itens"]  # os itens vão para a tabela itens_pedido
     return pedido
-
 
 def montar_itens(pedido):
     itens = []
@@ -70,13 +62,11 @@ def montar_itens(pedido):
         linha += 1
     return itens
 
-
 def tratar_produto(produto):
     produto = dict(produto)
     produto["produto_id"] = int(produto["produto_id"])
     produto["preco_base"] = converter_valor(produto["preco_base"])
     return produto
-
 
 def remover_repetidos(pedidos):
     vistos = set()
@@ -86,7 +76,6 @@ def remover_repetidos(pedidos):
             vistos.add(pedido["id"])
             unicos.append(pedido)
     return unicos
-
 
 def transformar_dados(clientes, pedidos, produtos):
     # clientes
