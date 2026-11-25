@@ -47,7 +47,7 @@ resultado_consultas.txt  # Resultados registrados das consultas
 ### Pré-requisitos
 
 - Python 3
-- PostgreSQL em execução e um banco criado para o projeto
+- Docker instalado, com o contêiner PostgreSQL do Plano B em execução
 - API do desafio disponível em `http://127.0.0.1:8000`
 
 O script `api_verdejar.py` é fornecido como parte dos insumos do desafio, mas não está incluído neste repositório. Inicie essa API separadamente antes de executar a extração.
@@ -64,7 +64,7 @@ python -m pip install requests psycopg2-binary python-dotenv pytest
 
 ### Preparar o banco
 
-Crie um banco PostgreSQL e aplique o esquema:
+Neste projeto foi usado o Plano B do desafio: PostgreSQL executado em Docker. Com o contêiner ativo e a porta `5432` publicada no host, aplique o esquema ao banco:
 
 ```powershell
 psql -U SEU_USUARIO -d SEU_BANCO -f insumos/schema.sql
