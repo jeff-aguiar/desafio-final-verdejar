@@ -38,6 +38,7 @@ evidencias/
   saida_etl_execucao1.txt # Saída registrada da primeira execução do ETL
   saida_etl_execucao2.txt # Saída registrada da segunda execução do ETL
   saida_pytest.txt        # Saída registrada dos testes
+  resultado_consultas.txt # Saída das consultas executadas no PostgreSQL
 insumos/
   dados/produtos.csv     # Produtos usados na carga
   schema.sql             # Esquema PostgreSQL
@@ -109,7 +110,7 @@ Os testes incluem casos para as regras de transformação e testes de reconcilia
 
 A saída completa dos testes está em [`evidencias/saida_pytest.txt`](evidencias/saida_pytest.txt). As saídas das duas execuções do ETL estão em [`evidencias/saida_etl_execucao1.txt`](evidencias/saida_etl_execucao1.txt) e [`evidencias/saida_etl_execucao2.txt`](evidencias/saida_etl_execucao2.txt).
 
-As consultas de conferência estão em [`consultas_validacao.sql`](consultas_validacao.sql); os resultados relevantes estão apresentados abaixo.
+As consultas de conferência estão em [`consultas_validacao.sql`](consultas_validacao.sql). A saída completa do PostgreSQL está em [`evidencias/resultado_consultas.txt`](evidencias/resultado_consultas.txt); os resultados principais também estão apresentados abaixo.
 
 ### Consultas de validação
 
