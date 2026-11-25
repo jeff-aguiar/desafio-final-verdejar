@@ -1,0 +1,19 @@
+============================= test session starts =============================
+platform win32 -- Python 3.15.2, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\Jeff\Documents\AIR FELLOWSHIP\desafio-final-verdejar\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Jeff\Documents\AIR FELLOWSHIP\desafio-final-verdejar
+collecting ... collected 11 items
+
+tests/test_reconciliacao.py::test_reconciliacao_pedidos PASSED           [  9%]
+tests/test_reconciliacao.py::test_consulta_vendas_por_mes PASSED         [ 18%]
+tests/test_transformacao.py::test_email_ausente_vira_nulo PASSED         [ 27%]
+tests/test_transformacao.py::test_estado_minusculo_vira_maiusculo PASSED [ 36%]
+tests/test_transformacao.py::test_data_com_barras_vira_iso PASSED        [ 45%]
+tests/test_transformacao.py::test_data_iso_permanece PASSED              [ 54%]
+tests/test_transformacao.py::test_valor_com_virgula_vira_numero PASSED   [ 63%]
+tests/test_transformacao.py::test_valor_numerico_permanece PASSED        [ 72%]
+tests/test_transformacao.py::test_pedido_repetido_fica_so_um PASSED      [ 81%]
+tests/test_transformacao.py::test_soma_dos_itens PASSED                  [ 90%]
+tests/test_transformacao.py::test_pedido_divergente_e_marcado PASSED     [100%]
+
+============================= 11 passed in 0.24s ==============================

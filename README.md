@@ -34,12 +34,15 @@ etl/
 tests/
   test_transformacao.py  # Testes das regras A1 a A6
   test_reconciliacao.py  # Reconciliação com o banco e validação de consulta
+evidencias/
+  saida_etl_execucao1.txt # Saída registrada da primeira execução do ETL
+  saida_etl_execucao2.txt # Saída registrada da segunda execução do ETL
+  saida_pytest.txt        # Saída registrada dos testes
 insumos/
   dados/produtos.csv     # Produtos usados na carga
   schema.sql             # Esquema PostgreSQL
 brutos/                  # JSON extraído; gerado durante a execução
 consultas_validacao.sql  # Consultas de conferência dos resultados
-resultado_consultas.txt  # Resultados registrados das consultas
 ```
 
 ## Como executar
@@ -104,11 +107,13 @@ Os testes incluem casos para as regras de transformação e testes de reconcilia
 
 **Resultado registrado:** 11 testes passaram — 9 de transformação e 2 de reconciliação.
 
-As consultas de conferência estão em [`consultas_validacao.sql`](consultas_validacao.sql), com os resultados registrados em [`resultado_consultas.txt`](resultado_consultas.txt).
+A saída completa dos testes está em [`evidencias/saida_pytest.txt`](evidencias/saida_pytest.txt). As saídas das duas execuções do ETL estão em [`evidencias/saida_etl_execucao1.txt`](evidencias/saida_etl_execucao1.txt) e [`evidencias/saida_etl_execucao2.txt`](evidencias/saida_etl_execucao2.txt).
+
+As consultas de conferência estão em [`consultas_validacao.sql`](consultas_validacao.sql); os resultados relevantes estão apresentados abaixo.
 
 ### Consultas de validação
 
-Arquivo: [`consultas_validacao.sql`](consultas_validacao.sql). Resultado completo em [`resultado_consultas.txt`](resultado_consultas.txt).
+Arquivo: [`consultas_validacao.sql`](consultas_validacao.sql).
 
 **(a) Total de vendas por mês**
 

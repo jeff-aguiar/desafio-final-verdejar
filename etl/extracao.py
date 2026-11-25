@@ -17,7 +17,7 @@ def salvar_json(dados, nome):
     print(f"Arquivo salvo: {nome}.json")
 
 
-def pegar_da_api(endpoint):
+def pegar_da_api(endpoint, nome_registros):
     lista = []
     pagina = 1
     total_paginas = 1
@@ -34,36 +34,41 @@ def pegar_da_api(endpoint):
                 print(f"Erro: página {pagina} de {endpoint} não existe.")
                 return None
 
-            resposta.raise_for_status()
-            resultado = resposta.json()
+            if resposta.status_code != 200:
+                print(f"Erro: a API retornou o status {resposta.status_code} em {endpoint}, página {pagina}.")
+                return None
 
+            resultado = resposta.json()
             total_paginas = resultado["total_pages"]
             lista.extend(resultado["items"])
-            print(f"{endpoint}: página {pagina} de {total_paginas}")
             pagina += 1
 
     except requests.exceptions.ConnectionError:
         print("Erro: não foi possível conectar à API. Verifique se ela está rodando.")
         return None
 
+    print(f"extracao: {endpoint} paginas={total_paginas} {nome_registros}={len(lista)}")
     return lista
 
 
 def extrair_dados():
-    clientes = pegar_da_api("clientes")
+    clientes = pegar_da_api("clientes", "registros")
     if clientes is None:
         return None, None, None
     salvar_json(clientes, "clientes")
 
-    pedidos = pegar_da_api("pedidos")
+    pedidos = pegar_da_api("pedidos", "registros_brutos")
     if pedidos is None:
         return None, None, None
     salvar_json(pedidos, "pedidos")
 
     caminho_csv = os.path.join(PASTA_PRINCIPAL, "insumos", "dados", "produtos.csv")
-    with open(caminho_csv, "r", encoding="utf-8") as f:
-        produtos = list(csv.DictReader(f))
+    try:
+        with open(caminho_csv, "r", encoding="utf-8") as f:
+            produtos = list(csv.DictReader(f))
+    except FileNotFoundError:
+        print(f"Erro: arquivo não encontrado: {caminho_csv}")
+        return None, None, None
     salvar_json(produtos, "produtos")
 
-    print(f"Clientes: {len(clientes)} | Pedidos: {len(pedidos)} | Produtos: {len(produtos)}")
     return clientes, pedidos, produtos

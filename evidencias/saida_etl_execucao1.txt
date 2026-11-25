@@ -1,0 +1,41 @@
+clientes: p├ígina 1 de 5
+clientes: p├ígina 2 de 5
+clientes: p├ígina 3 de 5
+clientes: p├ígina 4 de 5
+clientes: p├ígina 5 de 5
+Arquivo salvo: clientes.json
+pedidos: p├ígina 1 de 26
+pedidos: p├ígina 2 de 26
+pedidos: p├ígina 3 de 26
+pedidos: p├ígina 4 de 26
+pedidos: p├ígina 5 de 26
+pedidos: p├ígina 6 de 26
+pedidos: p├ígina 7 de 26
+pedidos: p├ígina 8 de 26
+pedidos: p├ígina 9 de 26
+pedidos: p├ígina 10 de 26
+pedidos: p├ígina 11 de 26
+pedidos: p├ígina 12 de 26
+pedidos: p├ígina 13 de 26
+pedidos: p├ígina 14 de 26
+pedidos: p├ígina 15 de 26
+pedidos: p├ígina 16 de 26
+pedidos: p├ígina 17 de 26
+pedidos: p├ígina 18 de 26
+pedidos: p├ígina 19 de 26
+pedidos: p├ígina 20 de 26
+pedidos: p├ígina 21 de 26
+pedidos: p├ígina 22 de 26
+pedidos: p├ígina 23 de 26
+pedidos: p├ígina 24 de 26
+pedidos: p├ígina 25 de 26
+pedidos: p├ígina 26 de 26
+Arquivo salvo: pedidos.json
+Arquivo salvo: produtos.json
+Clientes: 1000 | Pedidos: 5100 | Produtos: 12
+Total de clientes extra├¡dos: 1000
+transformacao: pedidos_unicos=5000 repetidos_descartados=100
+transformacao: emails_nulos=81 estados_padronizados=151 datas_convertidas=1037 valores_convertidos=1255
+divergentes: 238 pedidos com valor_total diferente da soma dos itens
+Clientes: 1000 | Pedidos: 5000 | Itens: 12455 | Produtos: 12
+carga: clientes=1000 produtos=12 pedidos=5000 itens=12455
